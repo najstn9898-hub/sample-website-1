@@ -437,6 +437,385 @@ nav {
     color: var(--dark-gray);
 }
 
+/* ========== ADD NEW CODE FROM HERE ========== */
+
+/* Page Header Styles for All Pages */
+.page-header {
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('../images/hero-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    color: var(--light);
+    padding: 100px 0 50px;
+    text-align: center;
+}
+
+.page-header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+    color: var(--primary-yellow);
+}
+
+.breadcrumb {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    flex-wrap: wrap;
+}
+
+.breadcrumb li {
+    margin: 0 5px;
+}
+
+.breadcrumb a {
+    color: var(--light);
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+.breadcrumb a:hover {
+    color: var(--primary-yellow);
+}
+
+.breadcrumb li:not(:last-child)::after {
+    content: '/';
+    margin-left: 10px;
+    color: var(--light);
+}
+
+/* Service Detail Pages */
+.service-detail {
+    padding: 80px 0;
+    background-color: var(--light);
+}
+
+.service-detail-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    align-items: center;
+}
+
+.service-detail-img {
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.service-detail-img img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.service-detail-text h2 {
+    font-size: 2.2rem;
+    margin-bottom: 20px;
+    color: var(--dark);
+}
+
+.service-detail-text p {
+    margin-bottom: 20px;
+    color: var(--dark-gray);
+    line-height: 1.8;
+}
+
+.features-list {
+    margin: 30px 0;
+    list-style: none;
+}
+
+.features-list li {
+    margin-bottom: 15px;
+    display: flex;
+    align-items: flex-start;
+    padding: 10px 0;
+    border-bottom: 1px solid var(--gray);
+}
+
+.features-list i {
+    color: var(--primary-yellow);
+    margin-right: 15px;
+    font-size: 1.2rem;
+    margin-top: 2px;
+}
+
+/* About Page Styles */
+.about {
+    padding: 80px 0;
+    background-color: var(--light);
+}
+
+.about-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    align-items: center;
+}
+
+.about-img {
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.about-img img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.about-text h2 {
+    font-size: 2.2rem;
+    margin-bottom: 20px;
+    color: var(--dark);
+}
+
+.about-text p {
+    margin-bottom: 20px;
+    color: var(--dark-gray);
+    line-height: 1.8;
+}
+
+.stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    margin-top: 50px;
+}
+
+.stat-card {
+    text-align: center;
+    padding: 30px 20px;
+    background-color: var(--gray);
+    border-radius: 10px;
+    transition: var(--transition);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.stat-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+}
+
+.stat-number {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: var(--primary-yellow);
+    margin-bottom: 10px;
+}
+
+.stat-text {
+    font-size: 1.1rem;
+    color: var(--dark);
+    font-weight: 500;
+}
+
+/* Contact Page Styles */
+.contact {
+    padding: 80px 0;
+    background-color: var(--light);
+}
+
+.contact-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+}
+
+.contact-info h2 {
+    font-size: 2.2rem;
+    margin-bottom: 20px;
+    color: var(--dark);
+}
+
+.contact-info p {
+    margin-bottom: 30px;
+    color: var(--dark-gray);
+    line-height: 1.8;
+}
+
+.contact-details {
+    margin-bottom: 30px;
+}
+
+.contact-item {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 25px;
+    padding: 15px;
+    background-color: var(--gray);
+    border-radius: 10px;
+    transition: var(--transition);
+}
+
+.contact-item:hover {
+    transform: translateX(5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.contact-icon {
+    background-color: var(--primary-yellow);
+    color: var(--dark);
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 15px;
+    flex-shrink: 0;
+    font-size: 1.2rem;
+}
+
+.contact-text h4 {
+    font-size: 1.1rem;
+    margin-bottom: 5px;
+    color: var(--dark);
+}
+
+.contact-text p, .contact-text a {
+    color: var(--dark-gray);
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+.contact-text a:hover {
+    color: var(--primary-yellow);
+}
+
+.contact-form {
+    background-color: var(--gray);
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.contact-form h3 {
+    font-size: 1.5rem;
+    margin-bottom: 25px;
+    color: var(--dark);
+    text-align: center;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+    color: var(--dark);
+}
+
+.form-control {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: var(--transition);
+    background-color: var(--light);
+}
+
+.form-control:focus {
+    outline: none;
+    border-color: var(--primary-yellow);
+    box-shadow: 0 0 0 2px rgba(255, 215, 0, 0.2);
+}
+
+textarea.form-control {
+    min-height: 150px;
+    resize: vertical;
+}
+
+/* Blog Page Styles */
+.blog {
+    padding: 80px 0;
+    background-color: var(--gray);
+}
+
+.blog-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 30px;
+}
+
+.blog-card {
+    background-color: var(--light);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: var(--transition);
+}
+
+.blog-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+}
+
+.blog-img {
+    height: 200px;
+    background-size: cover;
+    background-position: center;
+}
+
+.blog-content {
+    padding: 25px;
+}
+
+.blog-meta {
+    display: flex;
+    margin-bottom: 15px;
+    font-size: 0.9rem;
+    color: var(--dark-gray);
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.blog-date, .blog-category {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.blog-content h3 {
+    font-size: 1.3rem;
+    margin-bottom: 15px;
+    color: var(--dark);
+    line-height: 1.4;
+}
+
+.blog-content p {
+    color: var(--dark-gray);
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
+.blog-link {
+    color: var(--primary-yellow);
+    text-decoration: none;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    transition: var(--transition);
+}
+
+.blog-link:hover {
+    color: var(--secondary-yellow);
+}
+
+.blog-link i {
+    margin-left: 5px;
+    transition: var(--transition);
+}
+
+.blog-link:hover i {
+    transform: translateX(5px);
+}
+
+/* ========== CONTINUE WITH EXISTING CODE ========== */
+
 /* Testimonials Section */
 .testimonials {
     padding: 80px 0;
@@ -510,9 +889,9 @@ nav {
     margin-top: 60px;
     text-align: center;
     padding: 40px;
-    background: linear-gradient(135deg, var(--primary-yellow) 0%, var(--secondary-yellow) 100%);
+    background: linear-gradient(135deg, #00b469 0%, #008a52 100%);
     border-radius: 15px;
-    box-shadow: 0 10px 30px rgba(255, 215, 0, 0.3);
+    box-shadow: 0 10px 30px rgba(0, 180, 105, 0.3);
 }
 
 .trustpilot-content {
@@ -526,32 +905,35 @@ nav {
 .trustpilot-logo {
     max-width: 200px;
     height: auto;
+    filter: brightness(0) invert(1);
 }
 
 .trustpilot-text h3 {
     font-size: 1.5rem;
     margin-bottom: 15px;
-    color: var(--dark);
+    color: var(--light);
 }
 
 .trustpilot-link {
     display: inline-flex;
     align-items: center;
     gap: 10px;
-    background-color: var(--dark);
-    color: var(--light);
+    background-color: var(--light);
+    color: #00b469;
     padding: 12px 25px;
     border-radius: 30px;
     text-decoration: none;
     font-weight: bold;
     transition: var(--transition);
+    border: 2px solid transparent;
 }
 
 .trustpilot-link:hover {
-    background-color: var(--light);
-    color: var(--dark);
+    background-color: transparent;
+    color: var(--light);
+    border-color: var(--light);
     transform: translateY(-3px);
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 5px 15px rgba(255, 255, 255, 0.2);
 }
 
 /* Call to Action */
@@ -666,19 +1048,23 @@ footer {
     color: rgba(255, 255, 255, 0.7);
 }
 
-/* Responsive Styles */
+/* ========== ADD ENHANCED MOBILE RESPONSIVENESS ========== */
+
+/* Enhanced Mobile Responsiveness */
 @media (max-width: 992px) {
-    .hero h2 {
-        font-size: 2.5rem;
-    }
-    
-    .section-title h2 {
-        font-size: 2rem;
-    }
-    
-    .about-content {
+    .service-detail-content,
+    .about-content,
+    .contact-content {
         grid-template-columns: 1fr;
         gap: 30px;
+    }
+    
+    .stats {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .page-header h1 {
+        font-size: 2rem;
     }
 }
 
@@ -761,6 +1147,7 @@ footer {
         max-width: 150px;
     }
     
+    /* Enhanced mobile dropdown */
     .dropdown-menu {
         position: static;
         opacity: 1;
@@ -769,14 +1156,103 @@ footer {
         background-color: transparent;
         box-shadow: none;
         display: none;
+        padding: 0;
+        margin-top: 10px;
     }
     
     .dropdown.active .dropdown-menu {
         display: block;
     }
+    
+    .dropdown-menu li {
+        margin: 5px 0;
+    }
+    
+    .dropdown-menu a {
+        padding: 8px 15px;
+        border-left: none;
+        border-radius: 5px;
+        background-color: rgba(255, 255, 255, 0.1);
+    }
+    
+    .dropdown-menu a:hover {
+        background-color: rgba(255, 215, 0, 0.2);
+        padding-left: 15px;
+    }
+    
+    .service-detail,
+    .about,
+    .contact,
+    .blog {
+        padding: 60px 0;
+    }
+    
+    .service-detail-text h2,
+    .about-text h2,
+    .contact-info h2 {
+        font-size: 1.8rem;
+    }
+    
+    .contact-form {
+        padding: 25px;
+    }
+    
+    .contact-item {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .contact-icon {
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+    
+    .stats {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .stat-card {
+        padding: 20px 15px;
+    }
+    
+    .stat-number {
+        font-size: 2rem;
+    }
+    
+    .page-header {
+        padding: 80px 0 40px;
+    }
+    
+    .page-header h1 {
+        font-size: 1.8rem;
+    }
 }
 
 @media (max-width: 576px) {
+    .service-detail,
+    .about,
+    .contact,
+    .blog {
+        padding: 50px 0;
+    }
+    
+    .blog-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .contact-form {
+        padding: 20px;
+    }
+    
+    .page-header {
+        padding: 70px 0 30px;
+    }
+    
+    .page-header h1 {
+        font-size: 1.6rem;
+    }
+    
     .hero h2 {
         font-size: 1.8rem;
     }
