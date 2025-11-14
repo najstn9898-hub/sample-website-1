@@ -6,13 +6,21 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Mobile menu toggle
     if (mobileMenu) {
-        mobileMenu.addEventListener('click', function() {
+        mobileMenu.addEventListener('click', function(e) {
+            e.stopPropagation();
             navLinks.classList.toggle('active');
+            
+            // Close all dropdowns when mobile menu opens
+            if (navLinks.classList.contains('active')) {
+                dropdowns.forEach(dropdown => {
+                    dropdown.classList.remove('active');
+                });
+            }
         });
     }
     
-    // Close mobile menu when clicking on a link
-    const navItems = document.querySelectorAll('.nav-links a');
+    // Close mobile menu when clicking on a link (except dropdown toggles)
+    const navItems = document.querySelectorAll('.nav-links a:not(.dropdown-toggle)');
     navItems.forEach(item => {
         item.addEventListener('click', function() {
             navLinks.classList.remove('active');
@@ -27,6 +35,16 @@ document.addEventListener('DOMContentLoaded', function() {
             toggle.addEventListener('click', function(e) {
                 if (window.innerWidth <= 768) {
                     e.preventDefault();
+                    e.stopPropagation();
+                    
+                    // Close other dropdowns
+                    dropdowns.forEach(otherDropdown => {
+                        if (otherDropdown !== dropdown) {
+                            otherDropdown.classList.remove('active');
+                        }
+                    });
+                    
+                    // Toggle current dropdown
                     dropdown.classList.toggle('active');
                 }
             });
@@ -43,12 +61,28 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
     
-    // Close dropdowns when clicking outside
+    // Close dropdowns and mobile menu when clicking outside
     document.addEventListener('click', function(e) {
+        // Close mobile menu
+        if (!e.target.closest('.nav-links') && !e.target.closest('.mobile-menu')) {
+            navLinks.classList.remove('active');
+        }
+        
+        // Close dropdowns
         if (!e.target.closest('.dropdown')) {
             dropdowns.forEach(dropdown => {
                 dropdown.classList.remove('active');
             });
+        }
+    });
+    
+    // Close dropdowns on window resize
+    window.addEventListener('resize', function() {
+        if (window.innerWidth > 768) {
+            dropdowns.forEach(dropdown => {
+                dropdown.classList.remove('active');
+            });
+            navLinks.classList.remove('active');
         }
     });
 });
