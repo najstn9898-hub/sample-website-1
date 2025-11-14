@@ -1,8 +1,10 @@
-// Mobile menu toggle
+// Mobile menu toggle and dropdown functionality
 document.addEventListener('DOMContentLoaded', function() {
     const mobileMenu = document.querySelector('.mobile-menu');
     const navLinks = document.querySelector('.nav-links');
+    const dropdowns = document.querySelectorAll('.dropdown');
     
+    // Mobile menu toggle
     if (mobileMenu) {
         mobileMenu.addEventListener('click', function() {
             navLinks.classList.toggle('active');
@@ -17,14 +19,36 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
     
+    // Mobile dropdown functionality
+    dropdowns.forEach(dropdown => {
+        const toggle = dropdown.querySelector('.dropdown-toggle');
+        
+        if (toggle) {
+            toggle.addEventListener('click', function(e) {
+                if (window.innerWidth <= 768) {
+                    e.preventDefault();
+                    dropdown.classList.toggle('active');
+                }
+            });
+        }
+    });
+    
     // Form submission handling
     const contactForm = document.getElementById('contactForm');
     if (contactForm) {
         contactForm.addEventListener('submit', function(e) {
             e.preventDefault();
-            // In a real application, you would send the form data to a server here
             alert('Thank you for your message! We will get back to you soon.');
             contactForm.reset();
         });
     }
+    
+    // Close dropdowns when clicking outside
+    document.addEventListener('click', function(e) {
+        if (!e.target.closest('.dropdown')) {
+            dropdowns.forEach(dropdown => {
+                dropdown.classList.remove('active');
+            });
+        }
+    });
 });
